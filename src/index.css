@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+@layer components {
+  /* styles.css */
+
+  .avatar-container {
+    @apply flex justify-center items-center h-screen;
+  }
+
+  .avatar {
+    @apply morph-effect;
+    -webkit-animation: morph 8s ease-in-out infinite;
+    animation: morph 8s ease-in-out infinite;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    height: 35rem;
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 35rem;
+  }
+
+  .morph-effect {
+    /* Add styles specific to the img element */
+    @apply object-cover rounded-full;
+  }
+
+  @keyframes morph {
+    0%,
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 70% 40% 60%/40% 60% 30% 70%;
+    }
+  }
+
+  @keyframes animate-morph {
+    0%,
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 70% 40% 60%/40% 60% 30% 70%;
+    }
+  }
+}
